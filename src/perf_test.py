@@ -59,7 +59,7 @@ class performanceTest:
 			os.makedirs(self.log_dir)
 
 		with open(os.path.join(self.log_dir, self.log_file), 'w') as f:
-		    json.dump(self.output_json, f)
+		    json.dump(self.output_json, f, indent=4)
 
 		driver.close()
 
@@ -95,7 +95,9 @@ class performanceTest:
 		Load extra options into driver settings
 		"""
 		self.__options = Options()
+		self.__options.add_argument('--no-sandbox')
+		self.__options.add_argument('--disable-dev-shm-usage')
 		self.__options.add_argument('--headless')
 		self.__options.add_argument('--disable-gpu')
-		self.__options.add_argument('--no-sandbox')
 		self.__options.add_argument('--disable-cache')
+		self.__options.binary_location = "/usr/bin/google-chrome"
