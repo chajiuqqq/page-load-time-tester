@@ -18,7 +18,7 @@ class performanceTest:
 		self.driver_path = driver_path
 		self.loop = loop
 
-		self.log_dir = './log'
+		self.log_dir = './result'
 		self.__options = ''
 		self.output_json = {"url": self.url,
 						    "averageLoadingTime": 0,
